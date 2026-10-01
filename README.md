@@ -1,267 +1,76 @@
-
 # Healthcare / Pharma Sales Analysis
 
-## 📌 Project Overview
+## Project Overview
+A portfolio-ready analytics project that analyzes pharmaceutical sales data to understand product, regional, representative, doctor, and monthly performance.
 
-This project focuses on analyzing pharmaceutical sales data to understand **product performance, regional sales trends, customer/doctor activity, and overall revenue patterns**.
+## Objective
+Convert raw transaction data into business insights that can support sales planning, resource allocation, and performance monitoring.
 
-The main objective is to use data analytics to identify important business insights that can help a pharmaceutical company improve its sales performance and make better data-driven decisions.
+## Tech Stack
+- SQL (MySQL 8+)
+- Microsoft Excel
+- Power BI
+- GitHub
 
----
+## Dataset
+The project includes a synthetic dataset of 1,500 pharmaceutical sales transactions covering January–December 2025.
 
-## 🎯 Business Objectives
+Main fields:
+- Order_ID
+- Date / Month
+- Product
+- Category
+- Region / City
+- Sales Representative
+- Doctor_ID
+- Quantity
+- Unit_Price
+- Discount
+- Revenue
+- Profit
+- Profit_Margin
 
-The analysis aims to answer the following questions:
+## Workflow
+Raw CSV → Data validation/cleaning → SQL analysis → KPI calculations → Power BI dashboard → Business insights
 
-- Which pharmaceutical products generate the highest revenue?
-- Which regions have the highest and lowest sales?
-- How do sales change over time?
-- Which products are growing or declining in sales?
-- Which doctors/customers contribute the most to sales?
-- What are the major sales trends?
-- Which areas may require additional sales attention?
-- How can sales performance be improved using data-driven insights?
+## Business Questions
+1. What is total revenue, profit, units sold and average order value?
+2. Which products generate the most revenue?
+3. Which regions perform best?
+4. How does revenue change month to month?
+5. Which doctors and sales representatives contribute most?
+6. Which categories are most profitable?
+7. Which products/regions need attention?
+8. Does discounting appear to affect profitability?
 
----
-
-## 🛠️ Tools & Technologies
-
-- **SQL** – Data extraction, transformation and analysis
-- **Microsoft Excel** – Data cleaning and preliminary analysis
-- **Power BI** – Interactive dashboard and data visualization
-- **GitHub** – Project documentation and version control
-
----
-
-## 📊 Dataset
-
-The dataset contains pharmaceutical sales-related information such as:
-
-| Column | Description |
-|---|---|
-| Date | Date of transaction |
-| Product_ID | Unique product identifier |
-| Product_Name | Name of pharmaceutical product |
-| Category | Product/therapy category |
-| Region | Sales region |
-| Sales_Representative | Representative responsible for sales |
-| Doctor_ID | Unique doctor identifier |
-| Quantity | Number of units sold |
-| Unit_Price | Price per unit |
-| Revenue | Total revenue generated |
-
-> **Note:** Dataset structure can be modified depending on the source dataset used.
-
----
-
-## 🔄 Project Workflow
-
-```text
-Raw Dataset
-     ↓
-Data Cleaning
-     ↓
-SQL Analysis
-     ↓
-KPI Calculation
-     ↓
-Trend & Performance Analysis
-     ↓
-Power BI Dashboard
-     ↓
-Business Insights
-     ↓
-Recommendations
+## Repository Structure
 ```
-
----
-
-## 🧹 Data Cleaning
-
-The following data-cleaning activities were performed:
-
-- Removed duplicate records
-- Checked for missing values
-- Standardized product and region names
-- Corrected date formats
-- Checked numerical columns for invalid values
-- Verified revenue calculations
-- Created calculated fields required for analysis
-
----
-
-## 🗄️ SQL Analysis
-
-SQL was used to analyze sales performance and generate business insights.
-
-### Example KPIs
-
-- Total Revenue
-- Total Units Sold
-- Total Orders
-- Average Order Value
-- Monthly Revenue
-- Revenue by Product
-- Revenue by Region
-- Product Growth Rate
-
-### Example SQL Query
-
-```sql
-SELECT 
-    Product_Name,
-    SUM(Revenue) AS Total_Revenue
-FROM pharma_sales
-GROUP BY Product_Name
-ORDER BY Total_Revenue DESC;
-```
-
-This query identifies the pharmaceutical products generating the highest revenue.
-
----
-
-## 📈 Power BI Dashboard
-
-The Power BI dashboard contains the following sections:
-
-### 1. Overall Performance
-
-Key metrics:
-
-- Total Revenue
-- Total Units Sold
-- Total Orders
-- Average Order Value
-
-### 2. Product Analysis
-
-Visualizations include:
-
-- Revenue by product
-- Units sold by product
-- Top-performing products
-- Product-wise sales trends
-
-### 3. Regional Analysis
-
-Visualizations include:
-
-- Revenue by region
-- Units sold by region
-- Regional sales comparison
-- Region-wise monthly trends
-
-### 4. Time-Series Analysis
-
-The dashboard analyzes:
-
-- Monthly revenue
-- Monthly units sold
-- Growth trends
-- Seasonal patterns
-
-### 5. Sales Representative Analysis
-
-The dashboard compares:
-
-- Sales by representative
-- Revenue contribution
-- Units sold
-- Regional performance
-
----
-
-## 🔍 Key Insights
-
-The analysis can be used to identify insights such as:
-
-- A small group of products contributes a significant portion of total revenue.
-- Some regions consistently outperform other regions.
-- Sales performance changes considerably across different months.
-- Certain products show declining sales and may require additional attention.
-- High-performing sales representatives contribute significantly to overall revenue.
-- Regional performance can help identify areas with potential for sales growth.
-
-> The actual insights should be updated according to the results obtained from the dataset.
-
----
-
-## 💡 Business Recommendations
-
-Based on the analysis, possible recommendations include:
-
-1. **Focus on high-performing products**  
-   Allocate additional sales resources toward products with consistently strong demand.
-
-2. **Identify underperforming regions**  
-   Investigate regions with low sales and understand the underlying reasons.
-
-3. **Monitor declining products**  
-   Track products with decreasing sales and evaluate whether additional promotional or sales efforts are required.
-
-4. **Use sales trends for planning**  
-   Historical trends can help improve sales forecasting and resource allocation.
-
-5. **Analyze sales representative performance**  
-   Identify successful strategies used by high-performing representatives and evaluate whether they can be applied more broadly.
-
----
-
-## 📁 Repository Structure
-
-```text
-Healthcare-Pharma-Sales-Analysis/
-│
+Healthcare_Pharma_Sales_Analysis/
 ├── data/
 │   └── pharma_sales.csv
-│
+├── excel/
+│   └── pharma_sales_analysis.xlsx
 ├── sql/
 │   └── pharma_analysis.sql
-│
-├── powerbi/
-│   └── pharma_sales_dashboard.pbix
-│
-├── excel/
-│   └── cleaned_pharma_data.xlsx
-│
-├── images/
-│   └── dashboard.png
-│
+├── dashboard/
+│   └── powerbi_dashboard_plan.md
+├── docs/
+│   └── project_report.md
 └── README.md
 ```
 
----
+## How to Use
+1. Import `data/pharma_sales.csv` into MySQL.
+2. Run `sql/pharma_analysis.sql`.
+3. Open `excel/pharma_sales_analysis.xlsx` for pre-aggregated summaries.
+4. Load the CSV into Power BI.
+5. Recreate the dashboard using the dashboard plan provided in `dashboard/`.
 
-## 🚀 Skills Demonstrated
+## Skills Demonstrated
+SQL, data cleaning, aggregation, joins/window functions, KPI design, exploratory analysis, dashboard design, business interpretation, and data-driven recommendations.
 
-This project demonstrates practical skills in:
+## Interview Summary
+"I analyzed 1,500 pharmaceutical sales transactions across products, regions, doctors and sales representatives. I used SQL to calculate business KPIs and performance metrics, Excel for validation and summary analysis, and Power BI for visualization. The analysis focused on identifying high-performing products and regions, monthly trends, representative performance, and profitability so that sales teams could prioritize resources based on data."
 
-- Data Cleaning
-- SQL
-- Data Aggregation
-- KPI Development
-- Exploratory Data Analysis
-- Business Analytics
-- Data Visualization
-- Power BI Dashboard Development
-- Business Problem Solving
-- Data-Driven Decision Making
-
----
-
-## 📌 Conclusion
-
-The Healthcare / Pharma Sales Analysis project demonstrates how raw pharmaceutical sales data can be transformed into meaningful business insights.
-
-By combining **SQL, Excel and Power BI**, the project provides a structured approach to understanding sales performance, identifying trends, comparing regions and products, and supporting data-driven business decisions.
-
----
-
-## 👤 Author
-
-**Abhishek Indoliya**
-
-B.Tech – Metallurgical & Materials Engineering  
-IIT Patna
-
-**Skills:** SQL | Excel | Power BI | Data Analysis
+## Important
+This repository uses a synthetic dataset created for portfolio/interview practice. Do not present the generated findings as real pharmaceutical-company data.

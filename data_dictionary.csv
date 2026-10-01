@@ -1,0 +1,17 @@
+Field,Description
+Order_ID,Unique transaction identifier
+Date,Transaction date
+Month,Year-month derived from Date
+Product_ID,Unique product identifier
+Product_Name,Pharmaceutical product name
+Category,Therapeutic/product category
+Region,Sales region
+City,Sales city
+Sales_Representative,Representative associated with transaction
+Doctor_ID,Synthetic doctor identifier
+Quantity,Units sold
+Unit_Price,Price per unit
+Discount,Discount fraction applied to gross value
+Revenue,Net transaction revenue
+Profit,Estimated transaction profit
+Profit_Margin,Profit divided by revenue
